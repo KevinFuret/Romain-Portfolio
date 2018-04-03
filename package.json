@@ -1,0 +1,42 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "My easy gulp-starter ready!",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^16.1.0",
+    "del": "^3.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-pxtorem": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinFuret/gulp-starter.git"
+  },
+  "author": "Kévin FURET",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KevinFuret/gulp-starter/issues"
+  },
+  "homepage": "https://github.com/KevinFuret/gulp-starter#readme"
+}

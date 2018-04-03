@@ -1,0 +1,89 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.section {
+  width: 90%;
+  position: absolute;
+  overflow: scroll;
+  height: 100vh;
+  transition: all 1s cubic-bezier(.06,.97,.19,.91);
+}
+
+#section-left {
+  left: 0;
+  background-color: white;
+}
+
+#section-right {
+  right: 0;
+  background-color:$pink;
+}
+
+#section-right.section-active {
+    right: 0px !important;
+}
+
+#section-right.section-inactive {
+    right: 0;
+}
+
+#section-left.section-active {
+  .content {
+    left: 0px !important;
+  }
+}
+
+#section-left.section-inactive {
+
+}
+
+.section > .content {
+  min-width: 600px;
+  max-width: 100%;
+  padding: 5rem 10%;
+}
+
+.section-inactive {
+  cursor: pointer;
+  transition: all 1s cubic-bezier(.06,.97,.19,.91);
+  width: 10%;
+  overflow: hidden;
+  .content {
+    filter: blur(5px);
+    transition: all 0.5s cubic-bezier(.06,.97,.19,.91);
+  } 
+}
+
+.section-active {
+  width: 90%;
+  z-index: 1;
+}
+
+.section__title {
+  font-size: 15rem;
+  margin: 2rem 0 4rem 0;
+}
+
+.section__text, .section__experience-description {
+  font-size: 2rem;
+  line-height: 1.61;
+}
+
+.section-inactive.hover {
+  width: 20%;
+  z-index: 1000;
+  .content{
+    filter: blur(1px);
+  }
+}
+
+.section-active#section-right.hover {
+  .content{
+    transition: all 0.5s cubic-bezier(.06,.97,.19,.91);
+    padding: 5rem 10% 5rem 20%;
+  }
+}
+
+// TODO : 
+// chaque .content a un min-width en px (genre 500) pour dépasser de la section parente (qui a un overflow hidden)

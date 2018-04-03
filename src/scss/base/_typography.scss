@@ -1,0 +1,25 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 125% / 1.4 $text-font-stack;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/Helvetica-Bold.woff2') format('woff2'),
+  url('../fonts/Helvetica-Bold.woff') format('woff');
+  // TODO Add ttf font
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Helvetica', sans-serif;
+}
+
+p {
+  font-size: 2rem;
+}
+
