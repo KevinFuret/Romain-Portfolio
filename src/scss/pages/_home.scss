@@ -94,3 +94,12 @@
 .section__experience-date {
   min-width: 300px;
 }
+
+.copyright {
+  font-size: 12px;
+  a {
+    color: $brand-color;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+  }
+}
