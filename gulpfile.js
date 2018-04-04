@@ -97,15 +97,6 @@ function fonts() {
         .pipe(gulp.dest(dist + '/fonts'));
 }
 
-function generateImages() {
-    return gulp.src('src/images/**/*')
-        .pipe(srcset([{
-            width:  [1080, 720, 320],
-        }]))
-        .pipe(gulp.dest(dist + '/images'));
-}
-
-
 /**
  * GLOBAL
  */
@@ -117,9 +108,7 @@ function clean() {
 
 gulp.task('clean', clean);
 
-gulp.task('generateImages', generateImages);
-
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, js, images, generateImages, fonts)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, js, images, fonts)));
 
 gulp.task('default', gulp.parallel(html, scss, js, images, fonts, function(done) {
     sync.init({
