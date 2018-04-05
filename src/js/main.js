@@ -102,8 +102,6 @@ function content() {
                     var dates = dateBeginString;
                 }
 
-                var dates = dateBeginString + ' - ' + dateEndString;
-
                 var experience = converter.makeHtml(entry.fields.exprience);
                 insertText(experience, '.section__experiences', 'section__experience', dates);
             })
