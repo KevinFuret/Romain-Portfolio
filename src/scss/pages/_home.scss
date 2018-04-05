@@ -129,6 +129,11 @@
   @media screen and (min-width: $large) {
     min-width: 300px;
   }
+  grid-column-start: 1;
+}
+
+.section__experience-description {
+  grid-column-start: 2;
 }
 
 .copyright {
@@ -137,5 +142,9 @@
     color: $brand-color;
     text-decoration: none;
     border-bottom: 2px solid black;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
