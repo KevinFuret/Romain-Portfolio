@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     sliderSections();
     changeHeight();
     changeWidth();
-    console.log('dom loaded');
 });
 
 function getSections() {
@@ -14,7 +13,6 @@ function getSections() {
 }
 
 function sliderSections() {
-    console.log('sections initialize');
     
     getSections();
 
@@ -23,7 +21,6 @@ function sliderSections() {
 }
 
 function changeWidth() {
-    console.log('change width');
     getSections();
     
     sectionInactive.addEventListener("mouseenter", toggleHover);
@@ -37,7 +34,6 @@ function toggleHover(){
 }
 
 function changeOrder() {
-    console.log("changement section");
 
     getSections();
 
@@ -65,7 +61,6 @@ function changeHeight() {
     sectionActive.style.height = "100vh";
 
     var currentHeight = sectionActive.offsetHeight;
-    console.log(currentHeight);
     sectionInactive.style.height = currentHeight + "px";
 }
 
