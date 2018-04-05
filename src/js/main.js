@@ -77,8 +77,19 @@ function content() {
     })
         .then(function (entries) {
             entries.items.forEach(function (entry) {
-                console.log(JSON.stringify(entry.fields.date))
-                console.log(JSON.stringify(entry.fields.exprience))
+
+                var dateBeginBrut = entry.fields.dateBegin.split('-');
+                var dateBeginString = dateBeginBrut[1]+'.'+dateBeginBrut[0].substr(2);
+                console.log(dateBeginString);
+
+                var dateEndBrut = entry.fields.dateEnd.split('-');
+                var dateEndString = dateEndBrut[1]+'.'+dateEndBrut[0].substr(2);
+                console.log(dateEndString);
+
+                var dates = dateBeginString+' - '+dateEndString;
+
+                console.log(JSON.stringify(entry.fields.exprience));
+                insertText('<div class="section__experience"><p class="section__experience-date">'+dates+'</p><p class="section__experience-description">'+entry.fields.exprience+'</p></div>', '.section__experiences');
             })
         })
 }
