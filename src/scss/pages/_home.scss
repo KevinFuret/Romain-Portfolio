@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .section {
-  width: 90%;
+  width: 80%;
   position: absolute;
   overflow: scroll;
   height: 100vh;
@@ -11,6 +11,7 @@
   will-change: transform;        /* Exemple de <custom-ident> */
   overflow-x: hidden;
   -ms-overflow-style: none;  // IE 10+
+  
 }
 
 .section::-webkit-scrollbar { 
@@ -42,35 +43,58 @@
 }
 
 .section > .content {
-  min-width: 600px;
   max-width: 100%;
-  padding: 5rem 10%;
+  min-width: 200px;
+  padding: 2rem 10%;
+  @media screen and (min-width: $medium) {
+    min-width: 600px;
+    padding: 5rem 10%;
+  }
 }
 
 .section-inactive {
   cursor: pointer;
   transition: all 0.5s cubic-bezier(.06,.97,.19,.91);
-  width: 10%;
+  width: 20%;
   overflow: hidden;
   .content {
     filter: blur(5px);
     transition: all 0.5s cubic-bezier(.06,.97,.19,.91);
   } 
+  @media screen and (min-width: $large) {
+    width: 10%;
+  }
+  a {
+    pointer-events: none;
+  }
 }
 
 .section-active {
-  width: 90%;
+  width: 80%;
   z-index: 1;
+  @media screen and (min-width: $medium) {
+    width: 90%;
+  }
 }
 
 .section__title {
-  font-size: 15rem;
-  margin: 2rem 0 4rem 0;
+  font-size: 5rem;
+  margin: 1rem 0 2rem 0;
+  @media screen and (min-width: $large) {
+    font-size: 15rem;
+    margin: 2rem 0 4rem 0;
+  }
 }
 
-.section__text, .section__experience-description {
-  font-size: 2rem;
+.section__text, .section__experience-description, .section__experience-date {
+  font-size: 1rem;
   line-height: 1.61;
+  @media screen and (min-width: $medium) {
+    font-size: 1.5rem;
+  }
+  @media screen and (min-width: $large) {
+    font-size: 2rem;
+  }
 }
 
 .section-inactive.hover {
@@ -89,13 +113,22 @@
 }
 
 .section__experience {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
   margin-bottom: 2rem;
+  display: block;
+  @media screen and (min-width: $medium) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 .section__experience-date {
-  min-width: 300px;
+  min-width: 50px;
+  @media screen and (min-width: $large) {
+    min-width: 150px;
+  }
+  @media screen and (min-width: $large) {
+    min-width: 300px;
+  }
 }
 
 .copyright {

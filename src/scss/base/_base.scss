@@ -28,7 +28,10 @@ html {
 a {
   color: $brand-color;
   text-decoration: none;
-  border-bottom: 5px solid black;
+  border-bottom: 3px solid black;
+  @media screen and (min-width: $large) {
+    border-bottom: 5px solid black;
+  }
 }
 
 body {
