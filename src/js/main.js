@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     changeHeight();
     changeWidth();
     content();
+
 });
+
+window.onresize = function(event) {
+    changeHeight();
+};
 
 function getSections() {
     sectionActive = document.querySelector('.section-active');
