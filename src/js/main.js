@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     changeHeight();
     changeWidth();
     content();
-
 });
 
-window.onresize = function(event) {
+window.onresize = function (event) {
     changeHeight();
 };
 
@@ -86,11 +85,21 @@ function content() {
             // logs the field with ID title
             var description = converter.makeHtml(entry.fields.description);
 
-            insertText(description , '.section__description', 'section__text')
+            insertText(description, '.section__description', 'section__text')
+        })
+
+    client.getEntry('5X6o3OlWY8EWsgcKOUYCm6')
+        .then(function (entry) {
+            // get the id
+            var id = entry.fields.id;
+            id = id.toLowerCase();
+            addScript(id);
+            addGTag(id);
         })
 
     client.getEntries({
-        'content_type': 'expriences'
+        'content_type': 'expriences',
+        'order':'-fields.dateBegin'
     })
         .then(function (entries) {
             entries.items.forEach(function (entry) {
@@ -115,7 +124,6 @@ function content() {
 
 function insertText(text, place, className, date) {
     date = date || 0;
-    console.log(place);
     // récupérer le parent
     var div = document.querySelector(place);
     // créer une div (sans lui dire ou elle est dans le DOM)
@@ -125,9 +133,9 @@ function insertText(text, place, className, date) {
         experience.classList.add(className);
         // ajouter le contenu à l'enfant
         experience.innerHTML = '<p class="section__experience-date">' + date + '</p>' + text;
-    } else if (place === '.section__description'){
+    } else if (place === '.section__description') {
         experience.innerHTML = text;
-        
+
     }
 
     // ajouter la div experience dans le DOM, a l'intérieur du parent div
@@ -145,3 +153,18 @@ function insertText(text, place, className, date) {
         });
     }
 }
+
+function addScript(id) {
+    var script = document.createElement('script');
+    var value = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    script.setAttribute('src', value);
+    document.head.appendChild(script);
+}
+
+function addGTag(id){
+    var config = "window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }; gtag('js', new Date());gtag('config', '"+id.toUpperCase()+"');";
+    var script = document.createElement('script');
+    script.text = config;
+    document.head.appendChild(script);
+}
+
