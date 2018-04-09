@@ -1,6 +1,6 @@
-# Gulp Starter
+# Romain Berger Porfolio
 
-My easy and light **Node.js** & **Gulp** 4 starter!
+Portfolio made with **Node.js**, **Gulp** & **Contentful**
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -11,14 +11,14 @@ You need [Node.js](https://nodejs.org/en/) to run npm tasks
 
 ### Installing
 
-First, clone the repo on command line or [download it](x-github-client://openRepo/https://github.com/KevinFuret/gulp-starter)
+First, clone the repo on command line or [download it](x-github-client://openRepo/https://github.com/KevinFuret/Romain-Portfolio)
 ```
-git clone https://github.com/KevinFuret/gulp-starter.git
+git clone https://github.com/KevinFuret/Romain-Portfolio.git
 ```
 
 Then, move to the folder
 ```
-cd /gulp-starter
+cd /Romain-Portfolio
 ```
 
 Run the installation of the package by npm
