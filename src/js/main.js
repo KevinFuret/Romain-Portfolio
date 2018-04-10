@@ -110,7 +110,7 @@ function content() {
                 if (typeof entry.fields.dateEnd != 'undefined') {
                     var dateEndBrut = entry.fields.dateEnd.split('-');
                     var dateEndString = dateEndBrut[1] + '.' + dateEndBrut[0].substr(2);
-                    var dates = dateBeginString + ' - ' + dateEndString;
+                    var dates = dateBeginString + ' — ' + dateEndString;
                 } else {
                     var dateEndString = "";
                     var dates = dateBeginString;
