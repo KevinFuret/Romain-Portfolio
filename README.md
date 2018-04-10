@@ -18,7 +18,7 @@ git clone https://github.com/KevinFuret/Romain-Portfolio.git
 
 Then, move to the folder
 ```
-cd /Romain-Portfolio
+cd Romain-Portfolio
 ```
 
 Run the installation of the package by npm
