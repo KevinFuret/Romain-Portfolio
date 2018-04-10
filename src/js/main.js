@@ -78,15 +78,15 @@ function content() {
         accessToken: '7a535b5349a4dd26510674038fd0534ee139d172d34d6eb5fd6bdaf52e44915d'
     });
 
-
-    client.getEntry('2lMA1fjNkQgA04KSSmS6iK')
+    // GET THE CONTENT
+    /*client.getEntry('2lMA1fjNkQgA04KSSmS6iK')
         .then(function (entry) {
 
             // logs the field with ID title
             var description = converter.makeHtml(entry.fields.description);
 
             insertText(description, '.section__description', 'section__text')
-        })
+        })*/
 
     client.getEntry('5X6o3OlWY8EWsgcKOUYCm6')
         .then(function (entry) {
