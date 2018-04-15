@@ -35,6 +35,7 @@ a {
   }
   &:hover {
     border-bottom: 3px solid #999999;
+    color: #999999;
     @media screen and (min-width: $large) {
       border-bottom: 5px solid #999999;
       color: #999999;
