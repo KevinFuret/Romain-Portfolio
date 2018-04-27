@@ -107,7 +107,7 @@
   }
 }
 
-.section-inactive.hover {
+.section-inactive:hover {
   width: 20%;
   z-index: 1000;
   .content{
@@ -115,7 +115,7 @@
   }
 }
 
-.section-active#section-right.hover {
+.section-active#section-right:hover {
   .content{
     transition: all 0.5s cubic-bezier(.06,.97,.19,.91);
     padding: 5rem 10% 5rem 20%;

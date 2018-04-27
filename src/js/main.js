@@ -33,8 +33,8 @@ function changeWidth() {
 
 function toggleHover() {
   getSections();
-  sectionInactive.classList.toggle("hover");
-  sectionActive.classList.toggle("hover");
+  //sectionInactive.classList.toggle("hover");
+  //sectionActive.classList.toggle("hover");
 }
 
 function changeOrder() {
