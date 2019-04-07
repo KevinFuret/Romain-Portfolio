@@ -31,7 +31,7 @@ var dist = "dist";
 
 
 function html() {
-    return  gulp.src('src/*.html')
+    return gulp.src('src/*.html')
         .pipe(gulp.dest('dist/'))
         .pipe(sync.stream());
 }
@@ -59,10 +59,15 @@ function scss() {
  */
 
 function js() {
-    return browserify({entries: ['src/js/main.js'], debug: true})
-        .transform(babelify, {presets: 'es2015'})
+    return browserify({
+            entries: ['src/js/main.js'],
+            debug: true
+        })
+        .transform(babelify, {
+            presets: 'es2015'
+        })
         .bundle()
-        .on('error', function(err){
+        .on('error', function (err) {
             console.log(err.stack);
             this.emit('end');
 
@@ -71,21 +76,15 @@ function js() {
         .pipe(plumber())
         .pipe(source('index.js'))
         .pipe(buffer())
-        .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
+        .pipe(gulpif(!isProd, sourcemaps.init({
+            loadMaps: true
+        })))
         .pipe(uglify())
         .pipe(gulpif(!isProd, sourcemaps.write('.')))
         .pipe(gulp.dest(dist + '/js'))
         .pipe(sync.stream());
 };
 
-/**
- * IMAGES
- */
-
-function images() {
-    return gulp.src('src/images/**/*')
-        .pipe(gulp.dest(dist + '/images'));
-}
 
 /**
  * FONTS
@@ -93,7 +92,7 @@ function images() {
 
 function fonts() {
     return gulp.src('src/fonts/**/*')
-    // .pipe(gulp.dest(`${dist}/fonts.scss`));
+        // .pipe(gulp.dest(`${dist}/fonts.scss`));
         .pipe(gulp.dest(dist + '/fonts'));
 }
 
@@ -108,9 +107,9 @@ function clean() {
 
 gulp.task('clean', clean);
 
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, js, images, fonts)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, js, fonts)));
 
-gulp.task('default', gulp.parallel(html, scss, js, images, fonts, function(done) {
+gulp.task('default', gulp.parallel(html, scss, js, fonts, function (done) {
     sync.init({
         server: {
             baseDir: 'dist'
